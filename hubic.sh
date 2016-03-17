@@ -13,4 +13,9 @@ hubic login $account /backup/
 expect "Password"
 send "$pass\r"
 
+# We can create log of action 
+# Be sure that you've got directory in your /
+
+touch /loghubic/"$(date +%F) done"
+
 exit
