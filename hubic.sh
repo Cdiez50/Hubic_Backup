@@ -8,6 +8,10 @@ account "YOUR_EMAIL"
 
 hubic stop
 hubic start
+
+# Prevent if "Cannot contact daemon, are you sure it is running?" warning.
+export DBUS_SESSION_BUS_ADDRESS=`dbus-daemon --session --fork --print-address`
+
 hubic logout $account /backup/
 hubic login $account /backup/
 expect "Password"
