@@ -37,7 +37,7 @@ touch /loghubic/"$(date +%F) done"
 
 else
     # We add log notification
-    touch /loghubic/"$(date +%F) $DIR is Empty"
+    touch /loghubic/"$(date +%F) Empty"
 fi
 # rest of the logic
 
