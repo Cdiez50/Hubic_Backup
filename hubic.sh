@@ -18,22 +18,22 @@ DIR="/"
 if [ "$(ls -A $DIR)" ]; then
      echo "$DIR is not Empty"
      
-hubic stop
+     hubic stop
 
-# Prevent if "Cannot contact daemon, are you sure it is running?" warning exists.
-export DBUS_SESSION_BUS_ADDRESS=`dbus-daemon --session --fork --print-address`
+     # Prevent if "Cannot contact daemon, are you sure it is running?" warning exists.
+     export DBUS_SESSION_BUS_ADDRESS=`dbus-daemon --session --fork --print-address`
 
-hubic start
+     hubic start
 
-hubic login $account /backup/
+     hubic login $account /backup/
 
-expect "Password"
-send "$pass\r"
+     expect "Password"
+     send "$pass\r"
 
-# We can create log of action 
-# Be sure that you've got directory in your /
+     # We can create log of action 
+     # Be sure that you've got directory in your /
 
-touch /loghubic/"$(date +%F) done"
+     touch /loghubic/"$(date +%F) done"
 
 else
     # We add log notification
