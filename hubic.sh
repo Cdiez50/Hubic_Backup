@@ -25,7 +25,7 @@ if [ "$(ls -A $DIR)" ]; then
 
      hubic start
 
-     hubic login $account /backup/
+     hubic login $account /$DIR/
 
      expect "Password"
      send "$pass\r"
